@@ -1,5 +1,5 @@
-import FirebaseHelper from "./FirebaseHelper";
-import WebsocketHelper from "./WebsocketHelper";
+import FirebaseHelper from "./players/FirebaseHelper";
+import WebsocketHelper from "./connection/WebsocketHelper";
 
 FirebaseHelper.init();
 

@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@turf/turf": "^5.1.6",
     "@types/node": "^12.6.8",
     "eslint-config-airbnb": "^18.0.1",
     "express": "^4.15.3",
@@ -25,11 +24,8 @@
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "nodemon": "1.11.0",
-    "random-points-on-polygon": "0.0.4",
     "socket.io": "^2.2.0",
-    "wait-until": "0.0.2",
-    "websocket": "^1.0.29",
-    "ws": "^7.1.1"
+    "wait-until": "0.0.2"
   },
   "devDependencies": {
     "@types/mocha": "2.2.41",

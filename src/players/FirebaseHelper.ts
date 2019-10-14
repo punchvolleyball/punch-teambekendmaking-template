@@ -18,7 +18,7 @@ class FirebaseHelper {
             });
         } else {
             console.log("Running locally");
-            let serviceAccount = require("../serviceAccountKey.json");
+            let serviceAccount = require("../../serviceAccountKey.json");
             admin.initializeApp({
                 credential: admin.credential.cert(serviceAccount),
                 databaseURL: this.databaseURL

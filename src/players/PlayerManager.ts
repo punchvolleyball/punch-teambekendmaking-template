@@ -1,7 +1,7 @@
-import Team from "./model/Team";
+import Team from "./Team";
 import FirebaseHelper from "./FirebaseHelper";
-import Player from "./model/Player";
-import WebsocketHelper from "./WebsocketHelper";
+import Player from "./Player";
+import WebsocketHelper from "../connection/WebsocketHelper";
 
 class PlayerManager {
     public static teams: Team[];

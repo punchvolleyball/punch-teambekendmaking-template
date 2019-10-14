@@ -1,11 +1,12 @@
-import PlayerManager from "./PlayerManager";
+import PlayerManager from "../players/PlayerManager";
 
 const server = require('http').createServer();
 const io = require('socket.io')(server);
 
 import InputParser from "./InputParser";
-import Message from "./model/Message";
-import Player from "./model/Player";
+import Message from "./chat/Message";
+import Player from "../players/Player";
+import Chat from "./chat/Chat";
 
 class WebsocketHelper {
     public static init() {
@@ -20,9 +21,7 @@ class WebsocketHelper {
                 console.log('user disconnected');
             });
 
-
             socket.on("chat message", function (request) {
-                // TODO(@Dennis) properly implement the chat with filters and such.
                 let chatMessage: Message;
                 try {
                     chatMessage = InputParser.chatMessage(request);
@@ -31,23 +30,12 @@ class WebsocketHelper {
                     return;
                 }
                 console.log(`chat request - ${chatMessage.user}: ${chatMessage.message}`);
-
-                chatMessage.message = chatMessage.message.trim();
-
-                chatMessage.message = chatMessage.message.replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-
-                chatMessage.message = chatMessage.message.slice(0, 200);
-
+                chatMessage = Chat.filterMessage(chatMessage);
                 WebsocketHelper.broadCastChat(chatMessage);
             });
 
 
             socket.on("get unlocked players", function () {
-                console.log("Sending unlocked players");
                 socket.emit("unlocked players", PlayerManager.getAllUnlockedPlayers());
             });
 

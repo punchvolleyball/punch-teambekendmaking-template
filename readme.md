@@ -8,7 +8,7 @@ To copy this template:
 - Change the `databaseURL` in `FireBaseHelper.ts` to `https://<project-name>.firebaseio.com/`
 - Add a webapp to firebase in the console
 - Go to `settings --> Service accounts --> Firebase Admin SDK --> Generate new private key` to download your `serviceAccountKey.json`
-- Paste the contents to `serviceAccountKey.json` in your project.
+- Paste the contents to `serviceAccountKey.json` in your project (note that this is .gitignored).
 
 ### Development
 
