@@ -9,4 +9,4 @@ class ExampleRequest {
     }
 }
 
-export default ExampleRequest
+export default ExampleRequest;

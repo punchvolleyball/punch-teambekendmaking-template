@@ -1,7 +1,6 @@
 import Message from "./Message";
 
 class Chat {
-
     static filterMessage(message: Message): Message {
         message.message = message.message.trim();
 
@@ -12,8 +11,8 @@ class Chat {
             .replace(/'/g, "&#039;");
 
         message.message = message.message.slice(0, 200);
-        return message
+        return message;
     }
 }
 
-export default Chat
+export default Chat;

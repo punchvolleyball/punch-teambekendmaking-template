@@ -9,7 +9,7 @@ class PlayerManager {
     public static fromJSON(teamsJson) {
         this.teams = [];
         for (let i = 0; i < teamsJson.length; i++) {
-            let team = Team.fromJSON(teamsJson[i]);
+            const team = Team.fromJSON(teamsJson[i]);
             this.teams.push(team);
         }
     }
@@ -20,9 +20,9 @@ class PlayerManager {
             throw new Error("Player managers teamList is empty");
         }
         for (let i = 0; i < this.teams.length; i++) {
-            let team = this.teams[i];
+            const team = this.teams[i];
             for (let j = 0; j < team.players.length; j++) {
-                let player = team.players[j];
+                const player = team.players[j];
                 if (player.name == name) {
                     return [i, j];
                 }
@@ -36,12 +36,12 @@ class PlayerManager {
     }
 
     public static getPlayerTeamShortName(name: string) {
-        let teamNumber = this.getPlayerTeam(name);
+        const teamNumber = this.getPlayerTeam(name);
         return this.teams[teamNumber].shortName;
     }
 
     public static getRandomLockedPlayer(blackList: Player[] = []) {
-        let playerList = [];
+        const playerList = [];
         for (let i = 0; i < this.teams.length; i++) {
             for (let j = 0; j < this.teams[i].players.length; j++) {
                 if (!this.teams[i].players[j].unlocked && !this.contains(this.teams[i].players[j].name, blackList)) {
@@ -77,7 +77,7 @@ class PlayerManager {
     }
 
     public static isPlayerUnlocked(name: string) {
-        return this.getPlayerByName(name).unlocked
+        return this.getPlayerByName(name).unlocked;
     }
 
     public static unlockPlayerByName(name: string) {
@@ -99,7 +99,7 @@ class PlayerManager {
         if (this.teams == undefined) {
             return [];
         }
-        let teamCopy = JSON.parse(JSON.stringify(this.teams));
+        const teamCopy = JSON.parse(JSON.stringify(this.teams));
         for (let i = 0; i < teamCopy.length; i++) {
             for (let j = 0; j < teamCopy[i].players.length; j++) {
                 if (!teamCopy[i].players[j].unlocked) {
@@ -120,7 +120,7 @@ class PlayerManager {
         for (let i = 0; i < this.teams.length; i++) {
             for (let j = 0; j < this.teams[i].players.length; j++) {
                 if (this.teams[i].players[j].unlocked) {
-                    count++
+                    count++;
                 }
             }
         }
@@ -136,4 +136,4 @@ class PlayerManager {
     }
 }
 
-export default PlayerManager
+export default PlayerManager;

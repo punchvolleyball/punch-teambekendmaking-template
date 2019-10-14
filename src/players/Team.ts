@@ -14,12 +14,12 @@ class Team {
     }
 
     static fromJSON(teamJSON: any): Team {
-        let players = [];
+        const players = [];
         for (let i = 0; i < teamJSON.players.length; i++) {
-            players.push(Player.fromJSON(teamJSON.players[i]))
+            players.push(Player.fromJSON(teamJSON.players[i]));
         }
         return new Team(teamJSON.coach, teamJSON.name, players);
     }
 }
 
-export default Team
+export default Team;

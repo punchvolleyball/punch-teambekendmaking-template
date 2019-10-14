@@ -11,8 +11,8 @@ class Player {
     }
 
     static fromJSON(playerJSON: any): Player {
-        return new Player(playerJSON.name, playerJSON.position, playerJSON.unlocked)
+        return new Player(playerJSON.name, playerJSON.position, playerJSON.unlocked);
     }
 }
 
-export default Player
+export default Player;
