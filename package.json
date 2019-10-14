@@ -1,0 +1,46 @@
+{
+  "name": "@punch/punch-go",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "tsc --watch & nodemon dist",
+    "test": "tsc && mocha dist/**/*.spec.js",
+    "lint": "eslint src --ext ts",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@turf/turf": "^5.1.6",
+    "@types/node": "^12.6.8",
+    "eslint-config-airbnb": "^18.0.1",
+    "express": "^4.15.3",
+    "firebase": "^6.3.3",
+    "firebase-admin": "^8.3.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "nodemon": "1.11.0",
+    "random-points-on-polygon": "0.0.4",
+    "socket.io": "^2.2.0",
+    "wait-until": "0.0.2",
+    "websocket": "^1.0.29",
+    "ws": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "2.2.41",
+    "@types/ws": "^6.0.1",
+    "eslint": "4.0.0",
+    "eslint-config-airbnb-base": "11.2.0",
+    "eslint-plugin-import": "2.3.0",
+    "eslint-plugin-promise": "3.5.0",
+    "mocha": "3.4.2",
+    "supertest": "3.0.0",
+    "typescript": "2.3.3",
+    "typescript-eslint-parser": "3.0.0"
+  }
+}

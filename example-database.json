@@ -1,0 +1,39 @@
+{
+  "config": {
+    "setting": 3
+  },
+  "teams": [
+    {
+      "coach": "Coach 1",
+      "name": "Heren 1",
+      "players": [
+        {
+          "name": "Player 1",
+          "position": "A",
+          "unlocked": false
+        },
+        {
+          "name": "Player 2",
+          "position": "B",
+          "unlocked": true
+        }
+      ]
+    },
+    {
+      "coach": "Coach 2",
+      "name": "Dames 1",
+      "players": [
+        {
+          "name": "Player 3",
+          "position": "A",
+          "unlocked": true
+        },
+        {
+          "name": "Player 4",
+          "position": "B",
+          "unlocked": false
+        }
+      ]
+    }
+  ]
+}
